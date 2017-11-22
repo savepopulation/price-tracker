@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="loginView"
+            type="com.raqun.android.ui.login.LoginView" />
+    </data>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            style="@style/RootLayoutStyle"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/edittext_username"
+                    style="@style/BaseEditTextStyle"
+                    android:hint="@string/hint_username_or_email"
+                    android:inputType="text"
+                    android:maxLength="@integer/max_username_or_email_length"
+                    android:nextFocusForward="@+id/edittext_password" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_half">
+
+                <EditText
+                    android:id="@+id/edittext_password"
+                    style="@style/BaseEditTextStyle"
+                    android:hint="@string/hint_password"
+                    android:inputType="textPassword"
+                    android:maxLength="@integer/max_password_length" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:id="@+id/button_login"
+                style="@style/BaseButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/size_large"
+                android:onClick="@{()->loginView.login()}"
+                android:text="@string/button_login" />
+
+            <TextView
+                android:id="@+id/textview_remind_password"
+                style="@style/ClickableTextView"
+                android:layout_marginTop="@dimen/default_margin"
+                android:gravity="center"
+                android:text="@string/button_remind_password"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>

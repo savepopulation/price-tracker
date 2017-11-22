@@ -1,0 +1,141 @@
+<resources>
+    <string name="app_name">Raqun</string>
+
+    <!-- Screen Titles -->
+    <string name="screen_title_login">Giriş Yap</string>
+    <string name="screen_title_register">Kayıt Ol</string>
+    <string name="screen_title_contact">İletişim</string>
+    <string name="screen_title_add">Ürün Ekle</string>
+    <string name="screen_title_notifications">Bildirimler</string>
+    <string name="screen_title_favorites">Favorilerim</string>
+    <string name="screen_title_product_detail">Ürün Detay</string>
+
+    <!-- Navigation Items -->
+    <string name="action_home">Ana Sayfa</string>
+    <string name="action_profile">Profil</string>
+    <string name="action_favs">Favorilerim</string>
+    <string name="action_more">Daha Fazla</string>
+    <string name="action_notifications">Bildirimler</string>
+    <string name="action_paste">Yapıştır</string>
+    <string name="action_clear">Temizle</string>
+
+    <!-- Menu Items -->
+    <string name="menu_item_login">Giriş Yap</string>
+    <string name="menu_item_logout">Çıkış Yap</string>
+    <string name="menu_item_about">Hakkında</string>
+    <string name="menu_item_contact">İletişim</string>
+    <string name="menu_item_rate">Uygulamayı Oyla</string>
+    <string name="menu_item_register">Kayıt Ol</string>
+
+    <!-- Labels -->
+    <string name="label_top_followed_products">En Çok Takip Edilen Ürünler</string>
+    <string name="label_recent_followed_products">Yeni Eklenen Ürünler</string>
+    <string name="label_discounted_products">İndirimdeki Ürünler</string>
+    <string name="label_top_followed_web_sites">En Çok Takip Edilen Uygulamalar</string>
+    <string name="label_message_type">Mesaj Tipi</string>
+    <string name="label_message">Mesaj</string>
+    <string name="label_add_product">Lütfen takip etmek istediğiniz ürünün adresini giriniz.</string>
+    <string name="label_followed_by">Takipçi:</string>
+    <string name="label_price">Fiyat:</string>
+    <string name="label_company">Mağaza:</string>
+    <string name="label_last_update">Güncellenme Tarihi:</string>
+    <string name="label_description">Açıklama:</string>
+
+    <!-- Information Texts -->
+    <string name="information_login_for_favorites">Favori ürünülerinizi görebilmek için lütfen <b>giriş yapınız</b> ya da <b>kayıt olunuz.</b></string>
+    <string name="information_login_for_notifications">Bildirimlerinizi görebilmek için lütfen <b>giriş yapınız</b> ya da <b>kayıt olunuz.</b></string>
+    <string name="information_user_agreement"><b><u>Kullanıcı sözleşmesini</u></b> okudum ve kabul ediyorum.</string>
+    <string name="information_contact_permission">Sistem tarafından <b><u>bilgilendirme gönderilmesini</u></b> kabul ediyorum.</string>
+    <string name="information_login_for_add_product">Yeni bir ürün eklemek için lütfen <b>giriş yapınız</b> ya da <b>kayıt olunuz.</b></string>
+    <string name="information_paste_from_clipboard">Lütfen giriş yapınız!</string>
+    <string name="information_alarm_price_drop">Ürünün fiyatı düşünce bildirim gönderilecektir.</string>
+
+    <!-- Buttons -->
+    <string name="button_more">Daha Fazla</string>
+    <string name="button_login">Giriş Yap</string>
+    <string name="button_register">KAYIT OL</string>
+    <string name="button_remind_password">Şifremi unuttum</string>
+    <string name="button_send">Gönder</string>
+    <string name="button_logout">Çıkış Yap</string>
+    <string name="button_logout_with_user_name">Çıkış Yap, (%1$s)</string>
+    <string name="button_cancel">İPTAL</string>
+    <string name="button_ok">Tamam</string>
+    <string name="button_add">Ürün Ekle</string>
+    <string name="button_retry">Tekrar Dene</string>
+
+    <!-- Hints -->
+    <string name="hint_username">Kullanıcı Adı</string>
+    <string name="hint_password">Şifre</string>
+    <string name="hint_email">E-Posta</string>
+    <string name="hint_full_name">İsim - Soyisim</string>
+    <string name="hint_username_or_email">Kullanıcı Adı ve ya E-Posta</string>
+    <string name="hint_phone_number">Telefon Numarası</string>
+    <string name="hint_message">Mesajınız</string>
+    <string name="hint_add_product">Ürünün linki..</string>
+
+    <!-- Dialog Messages -->
+    <string name="dialog_message_logging_in">Giriş yapılıyor..</string>
+    <string name="dialog_message_wait">Lütfen bekleyin..</string>
+    <string name="dialog_message_logging_out">Çıkış yapılıyor.. Lütfen bekleyin..</string>
+    <string name="dialog_message_logout">Çıkış yapmak istediğinizden emin misiniz?</string>
+
+    <!-- Dialog Titles -->
+    <string name="dialog_title_register_success">Teşekkürler</string>
+
+    <!-- Error Messages -->
+    <string name="error_message_unknown">Bilinmeyen bir hata oluştu.</string>
+    <string name="error_message_logout">Geçersiz kullanıcı bilgileri. Lütfen tekrar giriş yapınız.</string>
+    <string name="error_message_connection">İsteğiniz şuan gerçekleştirilemiyor. Lütfen internet bağlantınızı kontrol edin.</string>
+    <string name="error_message_content_length">Your message should be at least 10 chars.</string>
+    <string name="error_message_username">Lütfen geçerli bir kullanıcı adı girin.</string>
+    <string name="error_message_password">Lütfen geçerli bir şifre girin.</string>
+    <string name="error_message_user_agreement">Lütfen kullanıcı sözleşmesini kabul edin.</string>
+    <string name="error_message_email">Lütfen geçerli bir E-Posta adresi girin.</string>
+    <string name="error_message_full_name">Lütfen geçerli bir isim soyisim girin.</string>
+    <string name="error_message_product_url">Lütfen geçerli bir ürün adresi girin.</string>
+    <string name="error_message_add_product">Üzgünüz! Ürününüzü şuan sisteme ekleyemiyoruz.</string>
+
+    <!-- Api Errors -->
+    <string name="api_error_message_400">Beklenmedik bir istekte bulundunuz. Lütfen gönderdiğiniz bilgileri kontrol edin.</string>
+
+    <!-- Success Messages -->
+    <string name="success_message_register">Kayıt olma işlemi başarıyla gerçekleşti. Lütfen giriş yapmaya çalışmadan önce üyeliğinizi aktive edin.</string>
+    <string name="success_message_send_feedback">Geri bildiriminiz için teşekkürler.</string>
+    <string name="success_message_logout">Sistemden başarıyla çıkış yaptınız. Sizi özleyeceğiz..</string>
+    <string name="success_message_login">Hoşgeldin %1$s, uygulamanın tadını çıkar..</string>
+    <string name="success_message_add_product">Tebrikler! Ürün başarıyla favori listenize eklenmiştir.</string>
+
+    <!-- Generic Texts -->
+    <string name="generic_text_followers">%1$s takipçi</string>
+    <string name="generic_text_followed_by">%1$s kişi</string>
+    <string name="generic_text_update_date">Ürün verileri son olarak <b>%1$s</b> tarihinde güncellenmiştir.</string>
+
+    <!-- Contact Types -->
+    <string-array name="contact_types">
+        <item>Sorun</item>
+        <item>Öneri</item>
+        <item>İstek</item>
+        <item>Diğer</item>
+    </string-array>
+
+    <!-- Contents -->
+    <string name="content_empty">İçerik bulunamadı.</string>
+    <string name="content_about">Raqun Hakkında</string>
+    <string name="content_user_agreement">Kullanıcı sözleşmesi</string>
+    <string name="content_contact_permissions">İletişim izni</string>
+
+    <!-- Content Titles -->
+    <string name="content_title_about">Raqun Hakkında</string>
+    <string name="content_title_user_agreement">Kullanıcı Sözleşmesi</string>
+    <string name="content_title_contact_permissions">İletişim İzinleri</string>
+
+    <!-- Notification -->
+    <string name="notification_default_message">Yeni bir mesajınız var..</string>
+
+    <!-- Tab Texts -->
+    <string-array name="product_detail_tabs">
+        <item>Detaylar</item>
+        <item>Alarmlar</item>
+    </string-array>
+
+</resources>

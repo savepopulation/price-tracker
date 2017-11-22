@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="content"
+            type="com.raqun.android.model.Content" />
+
+    </data>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            style="@style/TextViewDefault"
+            android:layout_margin="@dimen/default_margin"
+            android:text="@{content.content}" />
+
+    </ScrollView>
+
+</layout>

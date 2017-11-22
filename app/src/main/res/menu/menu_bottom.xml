@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_home"
+        android:enabled="true"
+        android:icon="@mipmap/ic_home_white_24dp"
+        android:title="@string/action_home"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_favs"
+        android:enabled="true"
+        android:icon="@mipmap/ic_favorite_white_24dp"
+        android:title="@string/action_favs"
+        app:showAsAction="ifRoom" />
+
+
+    <item
+        android:id="@+id/action_notifications"
+        android:enabled="true"
+        android:icon="@mipmap/ic_notifications_white_24dp"
+        android:title="@string/action_notifications"
+        app:showAsAction="ifRoom" />
+
+
+    <!--
+    <item
+        android:id="@+id/action_profile"
+        android:enabled="true"
+        android:title="@string/action_profile"
+        app:showAsAction="ifRoom"
+        android:icon="@mipmap/ic_person_white_24dp"/>
+        -->
+
+    <item
+        android:id="@+id/action_more"
+        android:enabled="true"
+        android:icon="@mipmap/ic_more_horiz_white_24dp"
+        android:title="@string/action_more"
+        app:showAsAction="ifRoom" />
+
+</menu>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="product"
+            type="com.raqun.android.model.Product" />
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/product_grid_row_height"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/size_half">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:scaleType="centerCrop"
+            app:imageUrl="@{product.imageUrl}" />
+
+        <TextView
+            style="@style/TextViewInformation"
+            android:layout_marginTop="@dimen/size_small"
+            android:maxLines="2"
+            android:minLines="2"
+            android:text="@{product.name}"
+            android:textColor="@color/primaryTextColor"
+            android:textSize="@dimen/small_text_size" />
+
+        <TextView
+            style="@style/TextViewInformation"
+            android:layout_marginTop="2dp"
+            android:maxLines="1"
+            app:currency="@{product.currency}"
+            app:price="@{product.price}" />
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,285 @@
+<resources>
+
+    <!-- Application Styles -->
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorButtonNormal">@color/colorAccent</item>
+        <item name="actionBarStyle">@style/Widget.MyApp.Toolbar.Solid</item>
+    </style>
+
+    <style name="AppThemeFullscreen" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="colorAccent">@android:color/white</item>
+    </style>
+
+    <style name="AppThemeNoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="Widget.MyApp.Toolbar.Solid" parent="Base.Widget.AppCompat.Light.ActionBar.Solid">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:theme">@style/ThemeOverlay.MyApp.ActionBar</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="elevation">4dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/abc_action_bar_default_height_material</item>
+        <item name="titleTextStyle">@style/AppTheme.Styled.ActionBar.TitleTextStyle</item>
+    </style>
+
+    <style name="AlertDialogCustom" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="ThemeOverlay.MyApp.ActionBar" parent="ThemeOverlay.AppCompat.ActionBar">
+        <!-- Parent theme sets colorControlNormal to textColorPrimary. -->
+        <item name="android:textColorPrimary">@android:color/white</item>
+    </style>
+
+    <style name="AppTheme.Styled.ActionBar.TitleTextStyle" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <!-- Application Styles End -->
+
+    <!-- Layout Styles -->
+
+    <style name="RootLayoutStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:padding">@dimen/default_padding</item>
+    </style>
+
+    <style name="LinearRootLayoutStyle" parent="RootLayoutStyle">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!-- Layout Styles End -->
+
+    <!-- Component Styles -->
+
+    <style name="TextViewDefault">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:color">@color/primaryTextColor</item>
+        <item name="android:textSize">@dimen/default_text_size</item>
+        <item name="android:drawablePadding">2dp</item>
+    </style>
+
+    <style name="ClickableTextView" parent="TextViewDefault">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="TextViewTitle" parent="TextViewDefault">
+        <item name="android:textSize">@dimen/title_text_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextViewInformation" parent="TextViewDefault">
+        <item name="android:color">@color/secondaryTextColor</item>
+        <item name="android:textSize">@dimen/small_text_size</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="TextViewLabel" parent="TextViewDefault">
+        <item name="android:maxLines">1</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+    </style>
+
+    <style name="ClickableTextView.Small">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="BaseIndicator" parent="Widget.AppCompat.ProgressBar">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+    </style>
+
+    <style name="WrapperCardViewStyle" parent="CardView.Light">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:minHeight">@dimen/product_card_view_height</item>
+    </style>
+
+    <style name="CardViewHandler">
+        <item name="android:minHeight">@dimen/product_card_view_height</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <style name="ActionButtonMenuLabelStyle">
+        <item name="android:textColor">@color/primaryTextColor</item>
+        <item name="android:paddingLeft">@dimen/default_padding</item>
+        <item name="android:paddingRight">@dimen/default_padding</item>
+        <item name="android:paddingTop">@dimen/size_small</item>
+        <item name="android:background">@android:drawable/dialog_holo_light_frame</item>
+        <item name="android:paddingBottom">@dimen/size_small</item>
+    </style>
+
+    <style name="BaseEditTextStyle" parent="Base.Widget.AppCompat.EditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="BaseTextInputLayoutStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/size_half</item>
+    </style>
+
+
+    <style name="BaseButtonStyle" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/default_button_height</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">16sp</item>
+        <item name="android:paddingRight">16sp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorButtonNormal">@color/colorAccent</item>
+    </style>
+
+    <style name="DefaultProgressBar" parent="Base.Widget.AppCompat.ProgressBar">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_centerInParent">true</item>
+    </style>
+
+    <style name="MenuItemRow">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingLeft">@dimen/size_default</item>
+        <item name="android:paddingRight">@dimen/size_default</item>
+        <item name="android:paddingTop">@dimen/size_half</item>
+        <item name="android:paddingBottom">@dimen/size_half</item>
+    </style>
+
+    <style name="LeftIndicatorImage">
+        <item name="android:layout_width">36dp</item>
+        <item name="android:layout_height">36dp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:padding">@dimen/size_half</item>
+    </style>
+
+    <style name="MenuItemIndicator" parent="LeftIndicatorImage">
+        <item name="android:background">@drawable/background_menu_item</item>
+    </style>
+
+    <style name="TextViewMenuItem" parent="TextViewTitle">
+        <item name="android:layout_marginLeft">@dimen/size_default</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <!-- Component Styles End -->
+
+    <style name="NotificationItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="NotificationItem.Title">
+        <item name="android:textSize">14sp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="NotificationItem.Content">
+        <item name="android:textSize">14sp</item>
+        <item name="android:maxLines">2</item>
+    </style>
+
+    <style name="NotificationItem.Desc">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/secondaryTextColor</item>
+    </style>
+
+    <!-- Detail Items -->
+    <style name="DetailItem" />
+
+    <style name="DetailItem.Container">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="DetailItem.Row">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="DetailItem.Image">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_margin">@dimen/default_margin</item>
+        <item name="android:tint">#999999</item>
+    </style>
+
+    <style name="DetailItem.Label">
+        <item name="android:layout_width">96dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_marginLeft">@dimen/size_small</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="DetailItem.Content">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:layout_marginLeft">@dimen/size_small</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:minWidth">108dp</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="DetailItem.Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_marginLeft">40dp</item>
+        <item name="android:background">@color/colorDivider</item>
+    </style>
+
+    <!-- Toolbar Styles -->
+
+    <style name="BaseToolbarExpandCollapseStyle">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ToolbarTitleExpandedStyle" parent="BaseToolbarExpandCollapseStyle">
+        <item name="android:textSize">18sp</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:alpha">0.1</item>
+    </style>
+
+    <style name="ToolbarTitleCollapsedStyle" parent="BaseToolbarExpandCollapseStyle">
+        <item name="android:textSize">20sp</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+</resources>

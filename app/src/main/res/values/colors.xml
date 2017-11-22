@@ -1,0 +1,18 @@
+<resources>
+    <color name="colorPrimary">#4CAF50</color>
+    <color name="colorPrimaryDark">#388E3C</color>
+    <color name="colorPrimaryOpacity">#324CAF50</color>
+    <color name="colorAccent">#FF5252</color>
+    <color name="primaryTextColor">#454545</color>
+    <color name="secondaryTextColor">#999999</color>
+    <color name="colorPrimaryLight">#C8E6C9</color>
+    <color name="colorDivider">#EEEEEE</color>
+    <color name="colorPositiveGreen">#4CAF50</color>
+    <color name="colorNegativeRed">#F44336</color>
+    <color name="colorNotrYellow">#FFC107</color>
+    <color name="colorClosed">#f1f1f1</color>
+    <color name="colorWonGreen">#4CAF50</color>
+    <color name="colorLooseRed">#F44336</color>
+    <color name="colorPendingYellow">#FFC107</color>
+    <color name="bottomNavigationBackgroundColor">#f1f1f1</color>
+</resources>

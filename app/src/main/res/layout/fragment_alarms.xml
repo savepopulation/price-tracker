@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.raqun.android.data.DataBean" />
+
+        <import type="com.raqun.android.model.Alarm" />
+
+        <import type="java.util.List" />
+
+        <variable
+            name="alarmsBean"
+            type="DataBean&lt;List&lt;Alarm&gt;&gt;" />
+
+    </data>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/alarms"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:alarms="@{alarmsBean.getData()}" />
+
+</layout>

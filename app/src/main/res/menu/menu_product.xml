@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_add_alarm"
+        android:enabled="true"
+        android:icon="@drawable/ic_alarm_add_white_24px"
+        android:title="@string/action_add_alarm"
+        app:showAsAction="ifRoom" />
+
+</menu>

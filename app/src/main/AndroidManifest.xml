@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.raqun.android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".RaqunApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ui.main.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.register.RegisterActivity"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".ui.contact.ContactActivity" />
+
+        <activity
+            android:name=".ui.logout.LogoutActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/AppThemeFullscreen" />
+
+        <activity android:name=".ui.content.ContentActivity" />
+
+        <activity
+            android:name=".ui.product.ProductActivity"
+            android:theme="@style/AppThemeNoActionBar" />
+
+        <activity android:name=".ui.add.AddProductActivity" />
+        <activity android:name=".ui.products.ProductsActivity" />
+
+        <service android:name=".fcm.MyFcmService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <service android:name=".fcm.MyFcmInstanceIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <service android:name=".fcm.RegisterTokenService" />
+
+        <!-- Fabric -->
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="fabric_key_goes_here" />
+
+        <!-- Fcm Meta Data -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_launcher_background" />
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+
+    </application>
+
+</manifest>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="isLoggedIn"
+            type="java.lang.Boolean" />
+
+        <!--
+        <variable
+            name="user"
+            type="com.raqun.android.model.User" />
+            -->
+
+        <variable
+            name="moreView"
+            type="com.raqun.android.ui.main.more.MoreView" />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                style="@style/MenuItemRow"
+                android:layout_marginTop="@dimen/size_half"
+                android:onClick="@{()-> moreView.showAbout()}">
+
+                <ImageView
+                    style="@style/MenuItemIndicator"
+                    android:src="@mipmap/ic_info_outline_white_24dp" />
+
+                <TextView
+                    style="@style/TextViewMenuItem"
+                    android:text="@string/menu_item_about" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/MenuItemRow"
+                android:onClick="@{()->moreView.showContact()}">
+
+                <ImageView
+                    style="@style/MenuItemIndicator"
+                    android:src="@mipmap/ic_mail_outline_white_24dp" />
+
+                <TextView
+                    style="@style/TextViewMenuItem"
+                    android:text="@string/menu_item_contact" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/MenuItemRow"
+                android:onClick="@{()->moreView.rateApp()}">
+
+                <ImageView
+                    style="@style/MenuItemIndicator"
+                    android:src="@mipmap/ic_star_white_24dp" />
+
+                <TextView
+                    style="@style/TextViewMenuItem"
+                    android:text="@string/menu_item_rate" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/MenuItemRow"
+                android:onClick="@{()->moreView.register()}"
+                android:visibility="@{!isLoggedIn}">
+
+                <ImageView
+                    style="@style/MenuItemIndicator"
+                    android:src="@mipmap/ic_person_add_white_24dp" />
+
+                <TextView
+                    style="@style/TextViewMenuItem"
+                    android:text="@string/menu_item_register" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/MenuItemRow"
+                android:onClick="@{()->moreView.login()}"
+                android:visibility="@{!isLoggedIn}">
+
+                <ImageView
+                    style="@style/MenuItemIndicator"
+                    android:src="@mipmap/ic_exit_to_app_white_24dp" />
+
+                <TextView
+                    style="@style/TextViewMenuItem"
+                    android:text="@string/menu_item_login" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/MenuItemRow"
+                android:onClick="@{()->moreView.logout()}"
+                android:visibility="@{isLoggedIn}">
+
+                <ImageView
+                    style="@style/MenuItemIndicator"
+                    android:rotation="180"
+                    android:src="@mipmap/ic_exit_to_app_white_24dp" />
+
+                <TextView
+                    style="@style/TextViewMenuItem"
+                    android:text="@string/button_logout" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>

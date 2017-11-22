@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.raqun.android.data.DataBean" />
+
+        <import type="com.raqun.android.model.Notification" />
+
+        <import type="com.raqun.android.ui.NavigationController" />
+
+        <import type="java.util.List" />
+
+        <variable
+            name="notificationsBean"
+            type="DataBean&lt;List&lt;Notification&gt;&gt;" />
+
+        <variable
+            name="navigator"
+            type="NavigationController" />
+
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerview_notifications"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="true"
+            app:navigator="@{navigator}"
+            app:notifications="@{notificationsBean.getData()}" />
+
+        <ProgressBar
+            style="@style/DefaultProgressBar"
+            android:visibility="@{notificationsBean}" />
+
+        <include
+            android:id="@+id/layout_auth"
+            layout="@layout/layout_auth" />
+
+    </RelativeLayout>
+
+</layout>

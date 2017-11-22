@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="contactView"
+            type="com.raqun.android.ui.contact.ContactView" />
+
+    </data>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            style="@style/RootLayoutStyle"
+            android:orientation="vertical"
+            android:padding="@dimen/size_default">
+
+            <TextView
+                style="@style/TextViewTitle"
+                android:text="@string/label_message_type" />
+
+            <Spinner
+                android:id="@+id/spinner_contact_types"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/contact_types" />
+
+            <TextView
+                style="@style/TextViewTitle"
+                android:layout_marginTop="@dimen/size_large"
+                android:text="@string/label_message" />
+
+            <EditText
+                android:id="@+id/edittext_message"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:gravity="top"
+                android:hint="@string/hint_message"
+                android:inputType="text"
+                android:lines="10"
+                android:maxLength="@integer/max_message_length" />
+
+            <Button
+                android:id="@+id/button_send"
+                style="@style/BaseButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/size_large"
+                android:onClick="@{()->contactView.sendMessage()}"
+                android:text="@string/button_send" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Max Lengths -->
+    <integer name="max_username_length">25</integer>
+    <integer name="max_password_length">32</integer>
+    <integer name="max_fullname_length">60</integer>
+    <integer name="max_email_length">75</integer>
+    <integer name="max_phone_length">12</integer>
+    <integer name="max_message_length">250</integer>
+    <integer name="max_username_or_email_length">75</integer>
+    <integer name="max_url_len">500</integer>
+
+    <integer name="min_feedback_length">10</integer>
+    <integer name="min_valid_username_len">4</integer>
+    <integer name="min_valid_passwrod_len">6</integer>
+    <integer name="min_default_input_len">6</integer>
+    <integer name="min_url_len">10</integer>
+</resources>

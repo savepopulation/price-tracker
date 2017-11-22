@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--
+    <item
+        android:id="@+id/action_paste"
+        android:enabled="true"
+        android:icon="@mipmap/ic_content_paste_white_24dp"
+        android:title="@string/action_paste"
+        app:showAsAction="ifRoom" />
+        -->
+
+    <item
+        android:id="@+id/action_clear"
+        android:enabled="true"
+        android:icon="@mipmap/ic_delete_white_24dp"
+        android:title="@string/action_clear"
+        app:showAsAction="ifRoom" />
+
+</menu>

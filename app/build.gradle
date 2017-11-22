@@ -1,0 +1,123 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+    }
+
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.+'
+    }
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'io.fabric'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.raqun.android"
+        minSdkVersion 17
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        buildConfigField('String', 'API_KEY', '"api_key_goes_here"')
+        buildConfigField('int', 'CHANNEL_KEY', '1')
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    flavorDimensions("default")
+
+    productFlavors {
+        prod {
+            dimension("default")
+            buildConfigField('String', 'BASE_URL', '"http://example.com/"')
+        }
+
+        beta {
+            dimension("default")
+            applicationIdSuffix ".beta"
+            versionNameSuffix ".beta"
+            buildConfigField('String', 'BASE_URL', '"http://example.com/"')
+        }
+
+        dev {
+            dimension("default")
+            applicationIdSuffix ".dev"
+            versionNameSuffix ".dev"
+            buildConfigField('String', 'BASE_URL', '"http://example.com/"')
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
+
+    androidExtensions {
+        experimental = true
+    }
+}
+
+kapt {
+    generateStubs = true
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile "com.android.support:design:$rootProject.ext.supportLibraryVersion"
+    compile "com.android.support:recyclerview-v7:$rootProject.ext.supportLibraryVersion"
+    compile "com.android.support:cardview-v7:$rootProject.ext.supportLibraryVersion"
+
+    // Retrofit
+    compile "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion"
+    compile "com.squareup.okhttp3:logging-interceptor:$rootProject.ext.loggingInterceptorVersion"
+    compile "com.squareup.retrofit2:converter-gson:$rootProject.ext.gsonVersion"
+    compile "com.squareup.retrofit2:adapter-rxjava2:$rootProject.ext.retrofitVersion"
+    compile 'com.squareup.okhttp3:okhttp:3.8.0'
+
+    // Dagger
+    compile "com.google.dagger:dagger-android-support:$rootProject.ext.daggerVersion"
+    kapt "com.google.dagger:dagger-compiler:$rootProject.ext.daggerVersion"
+    kapt "com.google.dagger:dagger-android-processor:$rootProject.ext.daggerVersion"
+
+    // Arch Components
+    compile "android.arch.lifecycle:runtime:$rootProject.ext.archLifecycleVersion"
+    compile "android.arch.lifecycle:extensions:$rootProject.ext.archExtensionsVersion"
+
+    // Rx
+    compile "io.reactivex.rxjava2:rxandroid:2.0.1"
+    compile "io.reactivex.rxjava2:rxkotlin:$rootProject.ext.rxKotlinVersion"
+
+    // Data Binding
+    kapt "com.android.databinding:compiler:$rootProject.ext.dataBindingCompilerVersion"
+
+    // Tools
+    compile "com.squareup.picasso:picasso:$rootProject.ext.picassoVersion"
+    compile "com.google.firebase:firebase-messaging:$rootProject.ext.firebaseMessagingVersion"
+    compile("com.crashlytics.sdk.android:crashlytics:$rootProject.ext.crashlyticsVersion") {
+        transitive = true
+    }
+
+    apply plugin: 'com.google.gms.google-services'
+}

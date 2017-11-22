@@ -1,0 +1,142 @@
+<resources>
+    <string name="app_name">Raqun</string>
+
+    <!-- Screen Titles -->
+    <string name="screen_title_login">Login</string>
+    <string name="screen_title_register">Register</string>
+    <string name="screen_title_contact">Contact</string>
+    <string name="screen_title_add">Add Product</string>
+    <string name="screen_title_notifications">Notifications</string>
+    <string name="screen_title_favorites">Favorites</string>
+    <string name="screen_title_product_detail">Product Detail</string>
+
+    <!-- Navigation Items -->
+    <string name="action_home">Home</string>
+    <string name="action_profile">Profile</string>
+    <string name="action_favs">Favorites</string>
+    <string name="action_more">More</string>
+    <string name="action_notifications">Notifications</string>
+    <string name="action_paste">Paste</string>
+    <string name="action_clear">Clear</string>
+    <string name="action_add_alarm">Set Alarm</string>
+
+    <!-- Menu Items -->
+    <string name="menu_item_login">Login</string>
+    <string name="menu_item_logout">Logout</string>
+    <string name="menu_item_about">About</string>
+    <string name="menu_item_contact">Contact</string>
+    <string name="menu_item_rate">Rate App</string>
+    <string name="menu_item_register">Register</string>
+
+    <!-- Labels -->
+    <string name="label_top_followed_products">Top Followed Products</string>
+    <string name="label_recent_followed_products">Recent Followed Products</string>
+    <string name="label_discounted_products">Discounted Products</string>
+    <string name="label_top_followed_web_sites">Top Followed Apps</string>
+    <string name="label_message_type">Message Type</string>
+    <string name="label_message">Message</string>
+    <string name="label_add_product">Please enter url of the product you want to track..</string>
+    <string name="label_followed_by">Followers:</string>
+    <string name="label_price">Price:</string>
+    <string name="label_company">Store:</string>
+    <string name="label_last_update">Last Update:</string>
+    <string name="label_description">Description:</string>
+
+    <!-- Information Texts -->
+    <string name="information_login_for_favorites">Please <b>Login</b> or <b>Register</b> to view your <br />Favorite Products</string>
+    <string name="information_login_for_notifications">Please <b>Login</b> or <b>Register</b> to view your <br />Notifications</string>
+    <string name="information_user_agreement">I\'ve read and accept <b><u>user agreement.</u></b></string>
+    <string name="information_contact_permission">I accept to <b><u>receive information.</u></b></string>
+    <string name="information_login_for_add_product">Please <b>Login</b> or <b>Register</b> to add a new product to your <br />Favorite Products</string>
+    <string name="information_paste_from_clipboard">Please Login or Register!</string>
+    <string name="information_alarm_price_drop">You\'ll get a notification when product\'s price is dropped</string>
+
+    <!-- Buttons -->
+    <string name="button_more">More</string>
+    <string name="button_login">Login</string>
+    <string name="button_register">Register</string>
+    <string name="button_remind_password">Remind Password</string>
+    <string name="button_send">Send</string>
+    <string name="button_logout">Logout</string>
+    <string name="button_logout_with_user_name">Logout (%1$s)</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="button_ok">Ok</string>
+    <string name="button_add">Add Product</string>
+    <string name="button_retry">Retry</string>
+
+    <!-- Hints -->
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_email">E-Mail</string>
+    <string name="hint_full_name">Name</string>
+    <string name="hint_username_or_email">Username or Email</string>
+    <string name="hint_phone_number">Phone Number</string>
+    <string name="hint_message">Your awesome message..</string>
+    <string name="hint_add_product">Product url..</string>
+
+    <!-- Dialog Messages -->
+    <string name="dialog_message_logging_in">Logging in..</string>
+    <string name="dialog_message_wait">Please wait..</string>
+    <string name="dialog_message_logging_out">Logging out.. Please wait..</string>
+    <string name="dialog_message_logout">Are you sure to logout?</string>
+
+    <!-- Dialog Titles -->
+    <string name="dialog_title_register_success">Thanks</string>
+
+    <!-- Error Messages -->
+    <string name="error_message_unknown">Unknown error has been occurred.</string>
+    <string name="error_message_logout">Your session is invalid. Please login to system again.</string>
+    <string name="error_message_connection">We can not retrieve data at the moment. Please check your connection.</string>
+    <string name="error_message_content_length">Your message should be at least 10 chars.</string>
+    <string name="error_message_username">Please enter a valid username.</string>
+    <string name="error_message_password">Please enter a valid password.</string>
+    <string name="error_message_user_agreement">Please confirm user agreement.</string>
+    <string name="error_message_email">Please enter a valid Email address.</string>
+    <string name="error_message_full_name">Please enter a valid name.</string>
+    <string name="error_message_product_url">Please enter a valid url..</string>
+    <string name="error_message_add_product">Sorry! We could not add your product.</string>
+
+    <!-- Api Errors -->
+    <string name="api_error_message_400">Unexpected Request. Please check your inputs..</string>
+
+    <!-- Success Messages -->
+    <string name="success_message_register">Your Register is successful. An activation mail has been sent to your email. Please activate your account before login.</string>
+    <string name="success_message_send_feedback">Thanks for your feedback..</string>
+    <string name="success_message_logout">You have been logged out successfully!</string>
+    <string name="success_message_login">Welcome %1$s, enjoy the app..</string>
+    <string name="success_message_add_product">Your product has been added to your favorites successfully..</string>
+
+    <!-- Generic Texts -->
+    <string name="generic_text_followers">%1$s followers</string>
+    <string name="generic_text_followed_by">%1$s people</string>
+    <string name="generic_text_update_date">Latest product data update: <b>%1$s</b></string>
+
+    <!-- Contact Types -->
+    <string-array name="contact_types">
+        <item>Problem</item>
+        <item>Suggestion</item>
+        <item>Wish</item>
+        <item>Other</item>
+    </string-array>
+
+    <!-- Contents -->
+    <string name="content_empty">No content available.</string>
+    <string name="content_about">This is about screen</string>
+    <string name="content_user_agreement">This is user agreement screen</string>
+    <string name="content_contact_permissions">This is contact permissions screen</string>
+
+    <!-- Content Titles -->
+    <string name="content_title_about">About Raqun</string>
+    <string name="content_title_user_agreement">User Agreement</string>
+    <string name="content_title_contact_permissions">Contact Permissions</string>
+
+    <!-- Notification -->
+    <string name="notification_default_message">You have a new message..</string>
+
+    <!-- Tab Texts -->
+    <string-array name="product_detail_tabs">
+        <item>Details</item>
+        <item>Alarms</item>
+    </string-array>
+
+</resources>

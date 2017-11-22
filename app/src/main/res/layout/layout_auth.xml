@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="isUserLoggedIn"
+            type="java.lang.Boolean" />
+
+        <variable
+            name="authView"
+            type="com.raqun.android.ui.view.AuthView" />
+
+        <variable
+            name="message"
+            type="java.lang.String" />
+
+    </data>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="@{!isUserLoggedIn}">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/size_large">
+
+            <TextView
+                style="@style/TextViewDefault"
+                android:gravity="center"
+                android:text="@{message}" />
+
+            <Button
+                style="@style/BaseButtonStyle"
+                android:layout_width="@dimen/default_button_width"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/default_margin"
+                android:onClick="@{()->authView.loginButtonClicked()}"
+                android:text="@string/button_login" />
+
+            <TextView
+                style="@style/ClickableTextView"
+                android:layout_width="@dimen/default_button_width"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/size_small"
+                android:gravity="center"
+                android:onClick="@{()->authView.registerButtonClicked()}"
+                android:text="@string/button_register"
+                android:textAllCaps="true"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>

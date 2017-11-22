@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.raqun.android.ui.NavigationController" />
+
+        <import type="com.raqun.android.data.DataBean" />
+
+        <import type="com.raqun.android.model.Product" />
+
+        <import type="com.raqun.android.model.WebApp" />
+
+        <import type="com.raqun.android.ui.main.home.HomeView" />
+
+        <import type="java.util.List" />
+
+        <variable
+            name="topProductsBean"
+            type="DataBean&lt;List&lt;Product&gt;&gt;" />
+
+        <variable
+            name="recentProductsBean"
+            type="DataBean&lt;List&lt;Product&gt;&gt;" />
+
+        <variable
+            name="discountedProductsBean"
+            type="DataBean&lt;List&lt;Product&gt;&gt;" />
+
+        <variable
+            name="topFollowedAppsBean"
+            type="DataBean&lt;List&lt;WebApp&gt;&gt;" />
+
+        <variable
+            name="homeView"
+            type="HomeView" />
+
+        <variable
+            name="navigator"
+            type="NavigationController" />
+
+    </data>
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            style="@style/LinearRootLayoutStyle"
+            android:layout_height="wrap_content">
+
+            <!-- Top Followed Products -->
+            <android.support.v7.widget.CardView
+                style="@style/WrapperCardViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card_view:cardElevation="@dimen/default_card_view_elevaion"
+                card_view:cardUseCompatPadding="true">
+
+                <RelativeLayout
+                    style="@style/CardViewHandler"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/linenarlayout_top_buttons_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:onClick="@{()->homeView.onMoreTopClicked()}"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/TextViewLabel"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/label_top_followed_products" />
+
+                        <TextView
+                            style="@style/ClickableTextView.Small"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/button_more" />
+
+                    </LinearLayout>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recyclerview_top"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/linenarlayout_top_buttons_container"
+                        android:layout_marginTop="@dimen/size_default"
+                        android:clipToPadding="true"
+                        app:homeProducts="@{topProductsBean.getData()}"
+                        app:navigator="@{navigator}" />
+
+                    <ProgressBar
+                        style="@style/DefaultProgressBar"
+                        android:visibility="@{topProductsBean}" />
+
+                </RelativeLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+            <!-- Recent Followed Products -->
+            <android.support.v7.widget.CardView
+                style="@style/WrapperCardViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card_view:cardElevation="@dimen/default_card_view_elevaion"
+                card_view:cardUseCompatPadding="true">
+
+                <RelativeLayout
+                    style="@style/CardViewHandler"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/linearlayout_recent_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:onClick="@{()->homeView.onMoreRecentClicked()}"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/TextViewLabel"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/label_recent_followed_products" />
+
+                        <TextView
+                            style="@style/ClickableTextView.Small"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/button_more" />
+
+                    </LinearLayout>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recyclerview_recent"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/linearlayout_recent_container"
+                        android:layout_marginTop="@dimen/size_default"
+                        app:homeProducts="@{recentProductsBean.getData()}"
+                        app:navigator="@{navigator}" />
+
+                    <ProgressBar
+                        style="@style/DefaultProgressBar"
+                        android:visibility="@{recentProductsBean}" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <!-- Discounted Products -->
+            <android.support.v7.widget.CardView
+                style="@style/WrapperCardViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card_view:cardElevation="@dimen/default_card_view_elevaion"
+                card_view:cardUseCompatPadding="true">
+
+                <RelativeLayout
+                    style="@style/CardViewHandler"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/linearlayout_discounted_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:onClick="@{()->homeView.onMoreDiscountClicked()}"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/TextViewLabel"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/label_discounted_products" />
+
+                        <TextView
+                            style="@style/ClickableTextView.Small"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/button_more" />
+
+                    </LinearLayout>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recyclerview_discount"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/linearlayout_discounted_container"
+                        android:layout_marginTop="@dimen/size_default"
+                        app:homeProducts="@{discountedProductsBean.getData()}"
+                        app:navigator="@{navigator}" />
+
+                    <ProgressBar
+                        style="@style/DefaultProgressBar"
+                        android:visibility="@{discountedProductsBean}" />
+
+                </RelativeLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+            <!-- Top Followed Web Apps -->
+            <android.support.v7.widget.CardView
+                style="@style/WrapperCardViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card_view:cardElevation="@dimen/default_card_view_elevaion"
+                card_view:cardUseCompatPadding="true">
+
+                <RelativeLayout
+                    style="@style/CardViewHandler"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/linearlayout_apps_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/TextViewLabel"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/label_top_followed_web_sites" />
+
+                        <TextView
+                            style="@style/ClickableTextView.Small"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/button_more"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recyclerview_apps"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/linearlayout_apps_container"
+                        android:layout_marginTop="@dimen/size_default"
+                        app:webApps="@{topFollowedAppsBean.getData()}" />
+
+                    <ProgressBar
+                        style="@style/DefaultProgressBar"
+                        android:visibility="@{topFollowedAppsBean}" />
+
+                </RelativeLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</layout>

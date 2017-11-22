@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="product"
+            type="com.raqun.android.model.Product" />
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/default_margin">
+
+            <LinearLayout style="@style/DetailItem.Container">
+
+                <LinearLayout style="@style/DetailItem.Row">
+
+                    <ImageView
+                        style="@style/DetailItem.Image"
+                        app:srcCompat="@drawable/ic_info_black_24px" />
+
+                    <TextView
+                        style="@style/DetailItem.Label"
+                        android:text="@string/label_description" />
+
+                    <TextView
+                        style="@style/DetailItem.Content"
+                        android:text="@{product.name}" />
+
+                </LinearLayout>
+
+                <View style="@style/DetailItem.Divider" />
+
+
+                <LinearLayout style="@style/DetailItem.Row">
+
+                    <ImageView
+                        style="@style/DetailItem.Image"
+                        app:srcCompat="@drawable/ic_local_offer_black_24px" />
+
+                    <TextView
+                        style="@style/DetailItem.Label"
+                        android:text="@string/label_price" />
+
+                    <TextView
+                        style="@style/DetailItem.Content"
+                        app:currency="@{product.currency}"
+                        app:price="@{product.price}" />
+
+                </LinearLayout>
+
+                <View style="@style/DetailItem.Divider" />
+
+                <LinearLayout style="@style/DetailItem.Row">
+
+                    <ImageView
+                        style="@style/DetailItem.Image"
+                        app:srcCompat="@drawable/ic_shopping_cart_black_24px" />
+
+                    <TextView
+                        style="@style/DetailItem.Label"
+                        android:text="@string/label_company" />
+
+                    <TextView
+                        style="@style/DetailItem.Content"
+                        android:text="@{product.webSiteName}" />
+
+                </LinearLayout>
+
+                <View style="@style/DetailItem.Divider" />
+
+                <LinearLayout style="@style/DetailItem.Row">
+
+                    <ImageView
+                        style="@style/DetailItem.Image"
+                        app:srcCompat="@drawable/ic_group_black_24px" />
+
+                    <TextView
+                        style="@style/DetailItem.Label"
+                        android:text="@string/label_followed_by" />
+
+                    <TextView
+                        style="@style/DetailItem.Content"
+                        android:text="@{String.format(@string/generic_text_followed_by,product.followersCount)}" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <TextView
+            style="@style/TextViewInformation"
+            android:layout_marginLeft="@dimen/default_margin"
+            android:layout_marginRight="@dimen/default_margin"
+            app:isUpdate="@{true}" />
+
+    </LinearLayout>
+
+</layout>

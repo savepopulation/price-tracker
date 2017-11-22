@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="notification"
+            type="com.raqun.android.model.Notification" />
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/size_default">
+
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/notification_indicator"
+            android:gravity="center"
+            android:text="R"
+            android:textColor="@android:color/white" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/size_default"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/NotificationItem.Title"
+                app:notificationProduct="@{notification.product}" />
+
+            <TextView
+                style="@style/NotificationItem.Content"
+                android:text="@{notification.content}" />
+
+            <TextView
+                style="@style/NotificationItem.Desc"
+                app:date="@{notification.createDate}" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

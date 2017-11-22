@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="registerView"
+            type="com.raqun.android.ui.register.RegisterView" />
+
+    </data>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            style="@style/RootLayoutStyle"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/edittext_username"
+                    style="@style/BaseEditTextStyle"
+                    android:hint="@string/hint_username"
+                    android:inputType="text"
+                    android:maxLength="@integer/max_username_length"
+                    android:nextFocusForward="@+id/edittext_email" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/edittext_email"
+                    style="@style/BaseEditTextStyle"
+                    android:hint="@string/hint_email"
+                    android:inputType="textEmailAddress"
+                    android:maxLength="@integer/max_email_length"
+                    android:nextFocusForward="@+id/edittext_password" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/edittext_fullname"
+                    style="@style/BaseEditTextStyle"
+                    android:hint="@string/hint_full_name"
+                    android:inputType="text"
+                    android:maxLength="@integer/max_fullname_length"
+                    android:nextFocusForward="@+id/edittext_phone" />
+
+            </android.support.design.widget.TextInputLayout>
+
+
+            <!--
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/edittext_phone"
+                    style="@style/BaseEditTextStyle"
+                    android:hint="@string/hint_phone_number"
+                    android:inputType="phone"
+                    android:maxLength="@integer/max_phone_length"
+                    android:nextFocusForward="@+id/edittext_password" />
+
+
+            </android.support.design.widget.TextInputLayout>
+            -->
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_half">
+
+                <EditText
+                    android:id="@+id/edittext_password"
+                    style="@style/BaseEditTextStyle"
+                    android:hint="@string/hint_password"
+                    android:inputType="textPassword"
+                    android:maxLength="@integer/max_password_length" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_margin">
+
+                <CheckBox
+                    android:id="@+id/checkbox_agreement"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true" />
+
+                <TextView
+                    android:id="@+id/textview_eula"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/default_margin"
+                    android:layout_toRightOf="@+id/checkbox_agreement"
+                    android:onClick="@{()->registerView.showUserAgreement()}"
+                    android:text="@string/information_user_agreement" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_margin">
+
+                <CheckBox
+                    android:id="@+id/checkbox_contact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true" />
+
+                <TextView
+                    android:id="@+id/textview_contact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/default_margin"
+                    android:layout_toRightOf="@+id/checkbox_contact"
+                    android:text="@string/information_contact_permission" />
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/button_register"
+                style="@style/BaseButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/size_large"
+                android:onClick="@{()->registerView.register()}"
+                android:text="@string/button_register" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>

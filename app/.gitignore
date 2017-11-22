@@ -1,0 +1,4 @@
+/build
+/libs
+fabric.properties
+*.json

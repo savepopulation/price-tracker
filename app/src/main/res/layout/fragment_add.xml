@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.raqun.android.data.DataBean" />
+
+        <import type="java.lang.Boolean" />
+
+        <import type="com.raqun.android.ui.add.AddProductView" />
+
+        <import type="com.raqun.android.data.DataState" />
+
+        <variable
+            name="addProductBean"
+            type="DataBean&lt;Boolean&gt;" />
+
+        <variable
+            name="uiCallback"
+            type="AddProductView" />
+
+        <variable
+            name="isUserLoggedIn"
+            type="Boolean" />
+
+    </data>
+
+
+    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/coordinator"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/size_half">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:minHeight="144dp"
+                android:padding="@dimen/size_default">
+
+                <RelativeLayout
+                    android:id="@+id/linearlayout_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="@{isUserLoggedIn}">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="@{addProductBean.getState() != DataState.FETCHING}">
+
+                        <TextView
+                            android:id="@+id/textview_label"
+                            style="@style/TextViewTitle"
+                            android:text="@string/label_add_product" />
+
+                        <EditText
+                            android:id="@+id/edittext_url"
+                            style="@style/BaseEditTextStyle"
+                            android:layout_below="@+id/textview_label"
+                            android:hint="@string/hint_add_product"
+                            android:inputType="textUri|textMultiLine"
+                            android:maxLength="@integer/max_url_len"
+                            android:maxLines="5"
+                            android:scrollbars="vertical" />
+
+                        <Button
+                            android:id="@+id/button_add"
+                            style="@style/BaseButtonStyle"
+                            android:layout_width="match_parent"
+                            android:layout_below="@+id/edittext_url"
+                            android:layout_marginTop="@dimen/size_small"
+                            android:onClick="@{()->uiCallback.addProduct()}"
+                            android:text="@string/button_add"
+                            android:visibility="visible" />
+
+                    </RelativeLayout>
+
+                    <!--
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="@{addProductBean.getState() == DataState.ERROR || addProductBean.getState() == DataState.SUCCESS}">
+
+                        <ImageView
+                            android:id="@+id/imageview_result"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:layout_gravity="center_horizontal"
+                            android:tint="@color/colorAccent"
+                            app:result="@{addProductBean.getState()}" />
+
+                        <TextView
+                            android:id="@+id/textview_result"
+                            style="@style/TextViewDefault"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginLeft="@dimen/size_large"
+                            android:layout_marginRight="@dimen/size_large"
+                            android:gravity="center"
+                            android:textSize="16sp"
+                            app:result="@{addProductBean.getState()}" />
+
+                    </LinearLayout>
+                    -->
+
+                    <ProgressBar
+                        style="@style/DefaultProgressBar"
+                        android:visibility="@{addProductBean}" />
+
+                </RelativeLayout>
+
+                <include
+                    android:id="@+id/layout_auth"
+                    layout="@layout/layout_auth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</layout>
