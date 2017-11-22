@@ -9,3 +9,4 @@ Example implementation of:
 * Retrofit 2.0
 * Dagger2 
 * Repository
+* Rotation Support
