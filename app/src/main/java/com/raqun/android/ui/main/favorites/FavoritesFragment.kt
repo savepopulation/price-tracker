@@ -45,10 +45,9 @@ class FavoritesFragment : BinderFragment<FragmentFavoritesBinding, FavoritesView
         binding.layoutAuth.authView = this
         binding.layoutAuth.message = getString(R.string.information_login_for_favorites)
 
-        binding.recyclerviewProducts?.let {
-            val layoutManager = GridLayoutManager(activity, Constants.DEFAULT_GRID_COLUMN_COUNT)
-            it.layoutManager = layoutManager
-            it.setHasFixedSize(true)
+        binding.recyclerviewProducts?.apply {
+            layoutManager = GridLayoutManager(activity, Constants.DEFAULT_GRID_COLUMN_COUNT)
+            setHasFixedSize(true)
         }
     }
 

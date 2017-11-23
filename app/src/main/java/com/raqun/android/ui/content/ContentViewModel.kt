@@ -2,6 +2,7 @@ package com.raqun.android.ui.content
 
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
+import com.raqun.android.data.DataBean
 import com.raqun.android.data.Error
 import com.raqun.android.data.source.ResourceRepository
 import com.raqun.android.extensions.getError
@@ -18,7 +19,7 @@ import javax.inject.Inject
 class ContentViewModel @Inject constructor(private val resourceRepository: ResourceRepository)
     : ViewModel() {
 
-    private val contentLiveData = MutableLiveData<UiDataBean<Content>>()
+    private val contentLiveData = MutableLiveData<DataBean<Content>>()
 
     private var contentId = -1
 

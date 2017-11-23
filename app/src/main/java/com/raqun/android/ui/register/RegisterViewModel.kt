@@ -6,6 +6,7 @@ import com.raqun.android.data.source.UserRepository
 import com.raqun.android.extensions.getError
 import com.raqun.android.model.UiDataBean
 import com.raqun.android.api.request.RegisterRequest
+import com.raqun.android.data.DataBean
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.schedulers.Schedulers
@@ -16,7 +17,7 @@ import javax.inject.Inject
  */
 class RegisterViewModel @Inject constructor(private val userRepository: UserRepository) : ViewModel() {
 
-    private val registerLiveData = MutableLiveData<UiDataBean<Boolean>>()
+    private val registerLiveData = MutableLiveData<DataBean<Boolean>>()
 
     fun isUserLoggedIn() = userRepository.isUserLoggedIn()
 

@@ -4,6 +4,7 @@ import android.arch.lifecycle.Observer
 import android.os.Bundle
 import android.util.Log
 import com.raqun.android.R
+import com.raqun.android.data.DataBean
 import com.raqun.android.databinding.FragmentContentBinding
 import com.raqun.android.model.Content
 import com.raqun.android.model.UiDataBean
@@ -29,13 +30,12 @@ class ContentFragment : BinderFragment<FragmentContentBinding, ContentViewModel>
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel.getContentLiveData().observe(this, Observer {
-            bean: UiDataBean<Content>? ->
-            bean?.let {
-                if (bean.hasError()) {
-                    onError(bean.getError())
+        viewModel.getContentLiveData().observe(this, Observer { bean: DataBean<Content>? ->
+            bean?.run {
+                if (hasError()) {
+                    onError(getError())
                 }
-                binding.setContent(bean.getData())
+                binding.content = getData()
             }
         })
         viewModel.setContentId(contentId)

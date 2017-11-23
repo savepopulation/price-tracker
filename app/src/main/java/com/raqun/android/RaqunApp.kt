@@ -28,7 +28,7 @@ class RaqunApp : Application(), HasActivityInjector, HasServiceInjector {
 
     override fun onCreate() {
         super.onCreate()
-        Fabric.with(this, Crashlytics())
+        //Fabric.with(this, Crashlytics())
 
         RaqunApp.sessionManager = SessionManager(getOrCreateSessionKey()).also {
             it.updateSession(UserHelper.getUserCredentials(this))

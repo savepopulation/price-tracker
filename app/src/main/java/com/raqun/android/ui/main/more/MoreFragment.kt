@@ -37,9 +37,9 @@ class MoreFragment : BinderFragment<FragmentMoreBinding, MoreViewModel>(), MoreV
         })
 
         viewModel.getUserDetail().observe(this, Observer { bean: DataBean<User>? ->
-            bean?.getData().run {
+            bean?.getData()?.run {
                 if (activity is BaseActivity) {
-                    (activity as BaseActivity).setScreenTitle(this?.userName)
+                    (activity as BaseActivity).setScreenTitle(userName)
                 }
             }
         })

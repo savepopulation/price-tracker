@@ -22,7 +22,6 @@ import com.raqun.android.util.reportAddProduct
 class AddProductFragment : BinderFragment<FragmentAddBinding, AddProductViewModel>(),
         AddProductView, AuthView {
 
-
     override fun getModelClass() = AddProductViewModel::class.java
 
     override fun getLayoutRes() = R.layout.fragment_add

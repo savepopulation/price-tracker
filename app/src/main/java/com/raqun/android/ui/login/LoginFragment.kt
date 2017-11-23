@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import com.raqun.android.BuildConfig
 import com.raqun.android.R
+import com.raqun.android.data.DataBean
 import com.raqun.android.databinding.FragmentLoginBinding
 import com.raqun.android.model.UiDataBean
 import com.raqun.android.model.User
@@ -39,13 +40,13 @@ class LoginFragment : BinderFragment<FragmentLoginBinding, LoginViewModel>(), Lo
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel.getLoginLiveData().observe(this, Observer { bean: UiDataBean<User>? ->
-            bean?.let {
-                loginProgressDialog.init(bean.getState())
-                if (bean.hasError()) {
-                    onError(bean.getError())
+        viewModel.getLoginLiveData().observe(this, Observer { bean: DataBean<User>? ->
+            bean?.run {
+                loginProgressDialog.init(getState())
+                if (hasError()) {
+                    onError(getError())
                 } else {
-                    bean.getData()?.let {
+                    if (getData() != null) {
                         alert(getString(R.string.success_message_login, bean.getData()!!.userName))
                         navigationController?.navigateToHome()
                     }
@@ -70,13 +71,6 @@ class LoginFragment : BinderFragment<FragmentLoginBinding, LoginViewModel>(), Lo
 
     override fun initView() {
         binding.loginView = this
-        if (BuildConfig.DEBUG) {
-            binding.buttonLogin.setOnLongClickListener {
-                binding.edittextUsername.setText("mute")
-                binding.edittextPassword.setText("Mk1907")
-                true
-            }
-        }
     }
 
     override fun login() {

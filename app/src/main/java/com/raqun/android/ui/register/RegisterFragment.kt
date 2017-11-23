@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import com.raqun.android.Constants
 import com.raqun.android.R
+import com.raqun.android.data.DataBean
 import com.raqun.android.databinding.FragmentRegisterBinding
 import com.raqun.android.model.UiDataBean
 import com.raqun.android.ui.BinderFragment
@@ -38,12 +39,12 @@ class RegisterFragment : BinderFragment<FragmentRegisterBinding, RegisterViewMod
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel.getRegisterLiveData().observe(this, Observer { bean: UiDataBean<Boolean>? ->
-            bean?.let {
-                registerProgressDialog.init(bean.getState())
-                if (bean.hasError()) {
-                    onError(bean.getError())
-                } else if (bean.getData() == true) {
+        viewModel.getRegisterLiveData().observe(this, Observer { bean: DataBean<Boolean>? ->
+            bean?.run {
+                registerProgressDialog.init(getState())
+                if (hasError()) {
+                    onError(getError())
+                } else if (getData() == true) {
                     Alert.create(activity,
                             getString(R.string.dialog_title_register_success),
                             getString(R.string.success_message_register),

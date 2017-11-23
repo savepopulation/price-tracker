@@ -27,7 +27,7 @@ class ProductsFragment : BinderFragment<FragmentProductsBinding, ProductsViewMod
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            productType = ProductListType.values()[arguments.getInt(BUNDLE_TYPE)]
+            productType = ProductListType.values()[it.getInt(BUNDLE_TYPE)]
         }
     }
 
@@ -42,10 +42,9 @@ class ProductsFragment : BinderFragment<FragmentProductsBinding, ProductsViewMod
 
     override fun initView() {
         binding.navigator = navigationController
-        binding.recyclerviewProducts?.let {
-            val layoutManager = GridLayoutManager(activity, Constants.DEFAULT_GRID_COLUMN_COUNT)
-            it.layoutManager = layoutManager
-            it.setHasFixedSize(true)
+        binding.recyclerviewProducts?.apply {
+            layoutManager = GridLayoutManager(activity, Constants.DEFAULT_GRID_COLUMN_COUNT)
+            setHasFixedSize(true)
         }
     }
 

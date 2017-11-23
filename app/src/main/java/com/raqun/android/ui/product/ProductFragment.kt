@@ -59,7 +59,7 @@ class ProductFragment : BinderFragment<FragmentProductBinding, ProductViewModel>
         }
 
         product?.let {
-            binding.product = product
+            binding.product = it
         }
     }
 

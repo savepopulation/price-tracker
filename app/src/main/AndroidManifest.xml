@@ -59,10 +59,11 @@
 
         <service android:name=".fcm.RegisterTokenService" />
 
-        <!-- Fabric -->
+        <!-- Fabric
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="fabric_key_goes_here" />
+            -->
 
         <!-- Fcm Meta Data -->
         <meta-data

@@ -2,6 +2,7 @@ package com.raqun.android.ui.login
 
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
+import com.raqun.android.data.DataBean
 import com.raqun.android.data.Error
 import com.raqun.android.data.source.UserRepository
 import com.raqun.android.extensions.getError
@@ -17,7 +18,7 @@ import javax.inject.Inject
  */
 class LoginViewModel @Inject constructor(private val userRepository: UserRepository) : ViewModel() {
 
-    private val loginLiveData = MutableLiveData<UiDataBean<User>>()
+    private val loginLiveData = MutableLiveData<DataBean<User>>()
 
     fun isUserLoggedIn() = userRepository.isUserLoggedIn()
 
@@ -36,5 +37,5 @@ class LoginViewModel @Inject constructor(private val userRepository: UserReposit
                 )
     }
 
-    fun getLoginLiveData() = loginLiveData;
+    fun getLoginLiveData() = loginLiveData
 }

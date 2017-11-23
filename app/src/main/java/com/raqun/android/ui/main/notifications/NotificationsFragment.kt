@@ -41,9 +41,9 @@ class NotificationsFragment : BinderFragment<FragmentNotificationsBinding, Notif
         binding.layoutAuth.authView = this
         binding.layoutAuth.message = getString(R.string.information_login_for_notifications)
         binding.navigator = navigationController
-        binding.recyclerviewNotifications?.let {
-            it.setup(activity, LinearLayoutManager.VERTICAL)
-            it.decorate()
+        binding.recyclerviewNotifications?.apply {
+            setup(activity, LinearLayoutManager.VERTICAL)
+            decorate()
         }
     }
 
