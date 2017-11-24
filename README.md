@@ -18,7 +18,8 @@ Feel free to modify and use code.
 * Repository
 * Rotation Support
 
-<br><br>
+# LICENSE
+
 MIT License
 
 Copyright (c) 2017 Taylan Sbrcn
