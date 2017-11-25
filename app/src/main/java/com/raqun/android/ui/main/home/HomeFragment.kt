@@ -1,21 +1,13 @@
 package com.raqun.android.ui.main.home
 
-import android.arch.lifecycle.Observer
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import com.raqun.android.R
-import com.raqun.android.RaqunApp
-import com.raqun.android.data.DataBean
-import com.raqun.android.data.source.DataObserver
 import com.raqun.android.databinding.FragmentHomeBinding
 import com.raqun.android.extensions.observeApi
-import com.raqun.android.model.Product
 import com.raqun.android.model.ProductListType
-import com.raqun.android.model.UiDataBean
-import com.raqun.android.model.WebApp
 import com.raqun.android.ui.BinderFragment
 import com.raqun.android.extensions.setup
-import com.raqun.android.session.SessionManager
 import com.raqun.android.ui.main.FabProvider
 
 /**
