@@ -19,7 +19,7 @@ import com.raqun.android.ui.product.ProductActivity
  */
 class MyFcmService : FirebaseMessagingService() {
     override fun onMessageReceived(remoteMessage: RemoteMessage?) {
-        remoteMessage?.let {
+        if (remoteMessage != null) {
             if (getString(R.string.gcm_defaultSenderId) == remoteMessage.from) {
                 remoteMessage.notification?.let {
                     var intent = MainActivity.newIntent(this)

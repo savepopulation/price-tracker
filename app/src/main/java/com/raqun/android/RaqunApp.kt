@@ -34,9 +34,9 @@ class RaqunApp : Application(), HasActivityInjector, HasServiceInjector {
             it.updateSession(UserHelper.getUserCredentials(this))
         }
 
-        DaggerAppComponent.builder().let {
-            it.application(this)
-            it.build()
+        with(DaggerAppComponent.builder()) {
+            application(this@RaqunApp)
+            build()
         }.also {
             it.inject(this)
         }
