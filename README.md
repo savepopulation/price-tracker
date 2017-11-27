@@ -7,19 +7,26 @@ Code reviews and PRs are always approvable.
 
 Feel free to modify and use code.
 
-# Example implementation of:
+# Screenshots
+<img src="https://raw.githubusercontent.com/savepopulation/price-tracker/master/art/home.png"
+height="384" width="210"> <img src="https://github.com/savepopulation/price-tracker/blob/master/art/product_detail.png"
+height="384" width="210"> <img src="https://raw.githubusercontent.com/savepopulation/price-tracker/master/art/notifications.png"
+height="384" width="210"> <img src="https://raw.githubusercontent.com/savepopulation/price-tracker/master/art/more.png"
+height="384" width="210">
+
+# Stack
 * Kotlin
 * MVVM
-* DataBinding
+* Data Binding
 * Architecture Components
 * RxKotlin
 * Retrofit 2.0
 * Dagger2 
 * Repository
 * Rotation Support
+* Bottom Navigation
 
-# LICENSE
-
+# License
 MIT License
 
 Copyright (c) 2017 Taylan Sbrcn
