@@ -14,7 +14,7 @@ height="384" width="210"> <img src="https://raw.githubusercontent.com/savepopula
 height="384" width="210"> <img src="https://raw.githubusercontent.com/savepopulation/price-tracker/master/art/more.png"
 height="384" width="210">
 
-# Stack
+# Tech Stack
 * Kotlin
 * MVVM
 * Data Binding
